@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "blog/public/index.html" },
+    { "source": "/demo/:match*", "destination": ":match*" },
+    { "source": "/:match*/", "destination": "blog/public/:match*/index.html" },
+    { "source": "/:match*", "destination": "blog/public/:match*" }
+  ]
+}

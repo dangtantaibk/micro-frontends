@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Module Federation React Example#Module Federation là một plugin của webpack 5, nên ta tiến hành cấu hình webpack như sau:
+Import ModuleFederationPlugin của webpack (lưu ý module này chỉ có trong webpack 5 trở lên)
+// webpack.config const {ModuleFederationPlugin} = require(&#39;webpack&#39;).container; Sau đó ta cấu hình plugin trong project products như sau
+// webpack.config (products project)  plugins: [ new ModuleFederationPlugin({ name: &#39;Products&#39;, library: {type: &#39;var&#39;, name: &#39;Products&#39;}, filename: &#39;products.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Module Federation React Example" />
+<meta property="og:description" content="Module Federation React Example#Module Federation là một plugin của webpack 5, nên ta tiến hành cấu hình webpack như sau:
+Import ModuleFederationPlugin của webpack (lưu ý module này chỉ có trong webpack 5 trở lên)
+// webpack.config const {ModuleFederationPlugin} = require(&#39;webpack&#39;).container; Sau đó ta cấu hình plugin trong project products như sau
+// webpack.config (products project)  plugins: [ new ModuleFederationPlugin({ name: &#39;Products&#39;, library: {type: &#39;var&#39;, name: &#39;Products&#39;}, filename: &#39;products." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://micro-frontends.tuando.net/docs/example/react-example/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2021-08-13T17:03:50+07:00" />
+
+<title>Module Federation React Example | Micro frontends</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.b2ff7cffa38d7560205a8ffdb5c9e367275bf6d5553f2698f2255f3675fc7709.js" integrity="sha256-sv98/6ONdWAgWo/9tcnjZydb9tVVPyaY8iVfNnX8dwk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Micro frontends</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Micro Frontends</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/table-of-contents/when-to-use/" class="">Khi nào ta nên nghĩ tới việc sử dụng Micro Frontends</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/table-of-contents/advantages-and-disadvantages/" class="">Một số ưu điểm và nhược điểm của Micro Frontends</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/table-of-contents/method/" class="">Một số phương pháp triển khai Micro Frontends</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-090e5e9541fbf7abe3678403e1b40824" class="toggle" checked />
+    <label for="section-090e5e9541fbf7abe3678403e1b40824" class="flex justify-between">
+      <a role="button" class="">Ví dụ</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/iframes/" class="">Iframes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/run-time-integration/" class="">Run-time integration via JavaScript</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/web-components/" class="">Web components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/react-example/" class=" active">Module Federation React Example</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/react-redux/" class="">Module Federation React Redux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/angular-react/" class="">Angular React Example</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/dotuan9x/micro-frontends" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Module Federation React Example</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#module-federation-react-example">Module Federation React Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="module-federation-react-example">
+  Module Federation React Example
+  <a class="anchor" href="#module-federation-react-example">#</a>
+</h2>
+<p>Module Federation là một plugin của webpack 5, nên ta tiến hành cấu hình webpack như sau:</p>
+<p>Import <code>ModuleFederationPlugin</code> của webpack (lưu ý module này chỉ có trong webpack 5 trở lên)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// webpack.config
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> {<span style="color:#a6e22e">ModuleFederationPlugin</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;webpack&#39;</span>).<span style="color:#a6e22e">container</span>;
+</code></pre></div><p>Sau đó ta cấu hình plugin trong project <code>products</code> như sau</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// webpack.config (products project)
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ModuleFederationPlugin</span>({
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Products&#39;</span>,
+        <span style="color:#a6e22e">library</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;var&#39;</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Products&#39;</span>},
+        <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;products.js&#39;</span>,
+        <span style="color:#a6e22e">exposes</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#39;./App&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/App&#39;</span>,
+        },
+        <span style="color:#a6e22e">shared</span><span style="color:#f92672">:</span> {
+            <span style="color:#e6db74">&#39;react&#39;</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">eager</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+                <span style="color:#a6e22e">singleton</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+                <span style="color:#a6e22e">requiredVersion</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">dependencies</span>.<span style="color:#a6e22e">react</span>,
+            },
+            <span style="color:#e6db74">&#39;react-dom&#39;</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">eager</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+                <span style="color:#a6e22e">singleton</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+            }
+        }
+    }),
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HTMLWebpackPlugin</span>({
+        <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;public/index.html&#39;</span>),
+        <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./index.html&#39;</span>,
+        <span style="color:#a6e22e">chunksSortMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;none&#39;</span>
+    })
+]
+</code></pre></div><p>Tiếp đó ta cấu hình webpack của project <code>container</code> như sau</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ModuleFederationPlugin</span>({
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;container&#39;</span>,
+        <span style="color:#a6e22e">remotes</span><span style="color:#f92672">:</span> {
+            <span style="color:#a6e22e">Products</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Products@http://localhost:8002/products.js&#39;</span>,
+        }
+    }),
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HTMLWebpackPlugin</span>({
+        <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;public/index.html&#39;</span>),
+        <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./index.html&#39;</span>,
+        <span style="color:#a6e22e">chunksSortMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;none&#39;</span>
+    })
+]
+</code></pre></div><p>Với thông tin cấu hình trên ta chú ý đoạn <code>'Products@http://localhost:8002/products.js'</code> thì <code>Products</code> là giá trị <code>name</code> trong phần cấu hình <code> library: {type: 'var', name: 'Products'}</code> của file webpack của project <code>products</code></p>
+<p>Và <code>http://localhost:8002/products.js</code> và domain và file bundle của project <code>products</code> sau khi được start lên</p>
+<p>Sau đó khi sử dụng ta chỉ việc import như một thư viện hoặc một component bình thường</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">RelatedProducts</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">lazy</span>(() =&gt; <span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#39;Products/App&#39;</span>));
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+    <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">React.Suspense</span> <span style="color:#a6e22e">fallback</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">null</span>}&gt;
+            &lt;<span style="color:#f92672">RelatedProducts</span> /&gt;
+        &lt;/<span style="color:#f92672">React.Suspense</span>&gt;
+    )
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;
+</code></pre></div><p>Và kết quả sẽ như hình bên dưới</p>
+<p><img src="/images/react-example.png" alt="Iframe" /></p>
+
+
+
+  
+  
+
+
+<a  href="https://github.com/dotuan9x/micro-frontends/tree/master/react-example"   target="_blank" rel="noopener"  class="book-btn">
+  Source code
+</a>
+
+
+
+
+  
+  
+
+
+<a  href="https://micro-frontends.tuando.net/demo/react-example"   target="_blank" rel="noopener"  class="book-btn">
+  Demo
+</a>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/dotuan9x/micro-frontends/commit/619df20768531988a87965c1039861266daeee19" title='Last modified by dotuan9x | August 13, 2021' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 13, 2021</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#module-federation-react-example">Module Federation React Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

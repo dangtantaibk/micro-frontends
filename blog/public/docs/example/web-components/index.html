@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web components#Để khai báo một HTML Custom Element ta thực hiện như sau:
+// /web-components/products/src/index.jsx import React from &#34;react&#34;; import ReactDOM from &#34;react-dom&#34;; import App from &#34;./App&#34;; class Webcomponents extends HTMLElement { constructor() { super(); } connectedCallback() { ReactDOM.render(&lt;App /&gt;, this); } } customElements.define(&#39;web-components-products&#39;, Webcomponents); Trong file index.html của project container ta load bundle file của project products
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;title&gt;The Model Store&lt;/title&gt; &lt;script src=&#34;https://micro-frontends.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Web components" />
+<meta property="og:description" content="Web components#Để khai báo một HTML Custom Element ta thực hiện như sau:
+// /web-components/products/src/index.jsx import React from &#34;react&#34;; import ReactDOM from &#34;react-dom&#34;; import App from &#34;./App&#34;; class Webcomponents extends HTMLElement { constructor() { super(); } connectedCallback() { ReactDOM.render(&lt;App /&gt;, this); } } customElements.define(&#39;web-components-products&#39;, Webcomponents); Trong file index.html của project container ta load bundle file của project products
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;title&gt;The Model Store&lt;/title&gt; &lt;script src=&#34;https://micro-frontends." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://micro-frontends.tuando.net/docs/example/web-components/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2021-08-13T17:07:56+07:00" />
+
+<title>Web components | Micro frontends</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.b2ff7cffa38d7560205a8ffdb5c9e367275bf6d5553f2698f2255f3675fc7709.js" integrity="sha256-sv98/6ONdWAgWo/9tcnjZydb9tVVPyaY8iVfNnX8dwk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Micro frontends</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Micro Frontends</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/table-of-contents/when-to-use/" class="">Khi nào ta nên nghĩ tới việc sử dụng Micro Frontends</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/table-of-contents/advantages-and-disadvantages/" class="">Một số ưu điểm và nhược điểm của Micro Frontends</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/table-of-contents/method/" class="">Một số phương pháp triển khai Micro Frontends</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-090e5e9541fbf7abe3678403e1b40824" class="toggle" checked />
+    <label for="section-090e5e9541fbf7abe3678403e1b40824" class="flex justify-between">
+      <a role="button" class="">Ví dụ</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/iframes/" class="">Iframes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/run-time-integration/" class="">Run-time integration via JavaScript</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/web-components/" class=" active">Web components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/react-example/" class="">Module Federation React Example</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/react-redux/" class="">Module Federation React Redux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://micro-frontends.tuando.net/docs/example/angular-react/" class="">Angular React Example</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/dotuan9x/micro-frontends" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Web components</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#web-components">Web components</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="web-components">
+  Web components
+  <a class="anchor" href="#web-components">#</a>
+</h2>
+<p>Để khai báo một HTML Custom Element ta thực hiện như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// /web-components/products/src/index.jsx
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react-dom&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./App&#34;</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Webcomponents</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">HTMLElement</span> {
+    <span style="color:#a6e22e">constructor</span>() {
+        <span style="color:#66d9ef">super</span>();
+    }
+
+    <span style="color:#a6e22e">connectedCallback</span>() {
+        <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">App</span> /&gt;, <span style="color:#66d9ef">this</span>);
+    }
+}
+
+<span style="color:#a6e22e">customElements</span>.<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;web-components-products&#39;</span>, <span style="color:#a6e22e">Webcomponents</span>);
+</code></pre></div><p>Trong file <code>index.html</code> của project <code>container</code> ta load bundle file của project <code>products</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;The Model Store&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://micro-frontends.tuando.net/demo/web-components/products/dist/main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;root&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><p>Tiếp đến ta gắn HTML ta <code> &lt;web-components-products /&gt;</code> vào chỗ cần hiện thị trong project <code>container</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">App</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">return</span> (
+    &lt;&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">The</span> <span style="color:#a6e22e">model</span> <span style="color:#a6e22e">store</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">web</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">components</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">products</span> /&gt;
+    &lt;/&gt;
+  )
+};
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;
+</code></pre></div><p><img src="/images/react-example.png" alt="Iframe" /></p>
+
+
+
+  
+  
+
+
+<a  href="https://github.com/dotuan9x/micro-frontends/tree/master/web-components"   target="_blank" rel="noopener"  class="book-btn">
+  Source code
+</a>
+
+
+
+
+  
+  
+
+
+<a  href="https://micro-frontends.tuando.net/demo/web-components"   target="_blank" rel="noopener"  class="book-btn">
+  Demo
+</a>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/dotuan9x/micro-frontends/commit/b524ea6762248b0dfecd2a3a059cb05bdd7ca660" title='Last modified by dotuan9x | August 13, 2021' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 13, 2021</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#web-components">Web components</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
